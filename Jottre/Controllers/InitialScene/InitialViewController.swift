@@ -37,14 +37,15 @@ class InitialViewController: UIViewController {
             textView.translatesAutoresizingMaskIntoConstraints = false
             textView.isEditable = false
             textView.isSelectable = false
-            textView.font = UIFont.systemFont(ofSize: 25, weight: .regular)
-            textView.textColor = UIColor.secondaryLabel
-            textView.text = UIDevice.isLimited() ? NSLocalizedString("Documents created with the 'Jottre for iPad' App can be viewed here.", comment: "") : NSLocalizedString("No documents available yet. Click 'Add note' to create a new file.", comment: "")
-            textView.text = Downloader.isCloudEnabled ? textView.text : UIDevice.isLimited() ? NSLocalizedString("Enable iCloud to view files created with 'Jottre for iPad'", comment: "") : NSLocalizedString("Enable iCloud to unlock the full potential of Jottre", comment: "")
+            //textView.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+            //textView.textColor = UIColor.secondaryLabel
+            textView.font = UIFont.boldSystemFont(ofSize: 50)
+            textView.textColor = UIColor.white
+            textView.text = UIDevice.isLimited() ? NSLocalizedString("", comment: "") : NSLocalizedString("No documents available yet. Click 'Add note' to create a new file.", comment: "")
             textView.textAlignment = .center
             textView.isScrollEnabled = false
             textView.backgroundColor = .clear
-            textView.alpha = 0
+            textView.alpha = 1
         return textView
     }()
     
@@ -52,7 +53,7 @@ class InitialViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
             layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
             layout.minimumLineSpacing = 20
-            layout.minimumInteritemSpacing = 20
+            //layout.minimumInteritemSpacing = 20
             
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
             collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,9 +96,10 @@ class InitialViewController: UIViewController {
     
     private func setupViews() {
         
-        navigationItem.title = "Jottre"
+        navigationItem.title = "BruinNote"
         
-        view.backgroundColor = .systemBackground
+        //view.backgroundColor = .systemBackground
+        view.layer.contents = UIImage(named: "background.jpg")?.cgImage
         
         if !UIDevice.isLimited() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NavigationTextButton(title: NSLocalizedString("Add note", comment: ""), target: self, action: #selector(createNode)))
@@ -149,6 +151,7 @@ class InitialViewController: UIViewController {
         let alertMessage = NSLocalizedString("Enter a name for the new note", comment: "")
         
         let noteName = NSLocalizedString("My note", comment: "")
+        let noteSubject = NSLocalizedString("Subject: Default", comment: "")
         
         let alertPrimaryActionTitle = NSLocalizedString("Create", comment: "")
         let alertCancelTitle = NSLocalizedString("Cancel", comment: "")
@@ -159,6 +162,10 @@ class InitialViewController: UIViewController {
             textField.placeholder = noteName
         }
         
+        alertController.addTextField { (textField) in
+            textField.placeholder = noteSubject
+        }
+        
         alertController.addAction(UIAlertAction(title: alertPrimaryActionTitle, style: .default, handler: { (action) in
             
             guard let textFields = alertController.textFields, var name = textFields[0].text else {
@@ -166,7 +173,12 @@ class InitialViewController: UIViewController {
             }
             name = name == "" ? noteName : name
             
-            self.nodeCollector.createNode(name: name) { (node) in }
+            guard let textFields = alertController.textFields, var note_subject = textFields[1].text else {
+                return
+            }
+            note_subject = note_subject == "" ? noteSubject : note_subject
+            
+            self.nodeCollector.createNode(name: name, subject: note_subject) { (node) in }
             
         }))
         
@@ -178,6 +190,7 @@ class InitialViewController: UIViewController {
     
     
     func presentInfoAlert() {
+        /*
         
         let alertTitle = NSLocalizedString("iCloud disabled", comment: "")
         let alertMessage = NSLocalizedString("While iCloud is disabled, you can only open files that are locally on this device.", comment: "")
@@ -197,7 +210,7 @@ class InitialViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: alertCancelTitle, style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
-        
+        */
     }
     
     
