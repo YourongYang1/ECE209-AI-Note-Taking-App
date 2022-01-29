@@ -37,7 +37,10 @@ class InitialViewController: UIViewController {
             textView.translatesAutoresizingMaskIntoConstraints = false
             textView.isEditable = false
             textView.isSelectable = false
+<<<<<<< HEAD
             textView.text = Downloader.isCloudEnabled ? textView.text : UIDevice.isLimited() ? NSLocalizedString("Enable iCloud to view files created with 'Jottre for iPad'", comment: "") : NSLocalizedString("Enable iCloud to unlock the full potential of Jottre", comment: "")
+=======
+>>>>>>> 443288a2290fe0bae8c13f7e68d852ec7c535eed
             //textView.font = UIFont.systemFont(ofSize: 25, weight: .regular)
             //textView.textColor = UIColor.secondaryLabel
             textView.font = UIFont.boldSystemFont(ofSize: 50)
