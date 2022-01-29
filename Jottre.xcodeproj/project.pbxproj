@@ -55,7 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		039AC40227A2A8C6004B4247 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		1B42BD2327A4E016005F774F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = "../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/05dae1cae07b82bcdf5a8f152ec1051f/Message/MessageTemp/f91434b88fb213ae8e10645453020eb8/Image/background.jpg"; sourceTree = "<group>"; };
 		A61A616025EEB2B40030684C /* RedoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedoButton.swift; sourceTree = "<group>"; };
 		A61A616325EEB34E0030684C /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };

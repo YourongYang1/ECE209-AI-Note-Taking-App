@@ -110,9 +110,9 @@ class NodeCollector {
     /// Creates a new Node for given name
     /// - Parameter name: This will be the name and filename (without suffix .jot) of the Node
     /// - Parameter completion: Returns a boolean that indicates success or failure and the hopefully created node
-    func createNode(name: String, completion: @escaping (_ node: Node?) -> Void) {
-        
-        let name = NodeCollector.computeCopyName(baseName: name, path: NodeCollector.writePath())
+    func createNode(name: String, subject: String, completion: @escaping (_ node: Node?) -> Void) {
+        let name_with_subject = name + "_" + subject
+        let name = NodeCollector.computeCopyName(baseName: name_with_subject, path: NodeCollector.writePath())
         let nodePath = NodeCollector.writePath().appendingPathComponent(name).appendingPathExtension("jot")
         
         let tmpNode = Node(url: nodePath)

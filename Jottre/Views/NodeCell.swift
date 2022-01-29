@@ -17,10 +17,9 @@ class NodeCell: UICollectionViewCell {
             
             titleLabel.text = node?.name
             updateMeta()
-            
+            name_with_subject = node?.name
         }
     }
-    
     
     var name_with_subject: String?
     {
@@ -62,7 +61,6 @@ class NodeCell: UICollectionViewCell {
     var overlay: UIView = {
         let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = UIColor.systemGray5
             //view.backgroundColor = UIColor.systemGray5
             view.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 15)
         return view

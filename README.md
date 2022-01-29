@@ -1,4 +1,3 @@
-TBD
 # BruinNote
 An iPad-based note-taking app with AI features.
 
