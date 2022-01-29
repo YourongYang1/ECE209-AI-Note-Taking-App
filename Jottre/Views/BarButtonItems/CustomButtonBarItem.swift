@@ -41,10 +41,12 @@ class CustomButtonBarItem: UIButton {
     func setupViews() {
         
         backgroundColor = .systemBlue
+        backgroundColor = .gray
                 
         tintColor = UIColor.white
         
         layer.cornerRadius = 15
+        layer.cornerRadius = 20
         layer.masksToBounds = true
         
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+var the_map_between_subject_and_color = [String: UIColor]()
 
 class NodeCell: UICollectionViewCell {
     
@@ -21,6 +22,24 @@ class NodeCell: UICollectionViewCell {
     }
     
     
+    var name_with_subject: String?
+    {
+        didSet{
+            let name_and_subject = name_with_subject?.components(separatedBy: "_")
+            let dictKeys = [String](the_map_between_subject_and_color.keys)
+            print(dictKeys)
+            if dictKeys.contains(name_and_subject?[1] ?? "")
+            {
+                overlay.backgroundColor = the_map_between_subject_and_color[name_and_subject?[1] ?? ""]
+            }
+            else{
+                let color: UIColor = UIColor.init(red: (((CGFloat)((arc4random() % 256)) / 255.0)),green: (((CGFloat)((arc4random() % 256)) / 255.0)),blue: (((CGFloat)((arc4random() % 256)) / 255.0)),alpha: 1.0)
+                the_map_between_subject_and_color[name_and_subject?[1] ?? ""] = color
+                overlay.backgroundColor = color
+            }
+
+        }
+    }
     
     // MARK: - Subviews
     
@@ -44,6 +63,7 @@ class NodeCell: UICollectionViewCell {
         let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = UIColor.systemGray5
+            //view.backgroundColor = UIColor.systemGray5
             view.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 15)
         return view
     }()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B42BD2427A4E016005F774F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B42BD2327A4E016005F774F /* background.jpg */; };
 		A61A616125EEB2B40030684C /* RedoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A616025EEB2B40030684C /* RedoButton.swift */; };
 		A61A616425EEB34E0030684C /* UndoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A616325EEB34E0030684C /* UndoButton.swift */; };
 		A61A616725EEB44E0030684C /* SpaceButtonBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A616625EEB44E0030684C /* SpaceButtonBarItem.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		039AC40227A2A8C6004B4247 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		1B42BD2327A4E016005F774F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = "../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/05dae1cae07b82bcdf5a8f152ec1051f/Message/MessageTemp/f91434b88fb213ae8e10645453020eb8/Image/background.jpg"; sourceTree = "<group>"; };
 		A61A616025EEB2B40030684C /* RedoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedoButton.swift; sourceTree = "<group>"; };
 		A61A616325EEB34E0030684C /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };
 		A61A616625EEB44E0030684C /* SpaceButtonBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButtonBarItem.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		A6E3B83F25B3349900C65157 /* InitialScene */ = {
 			isa = PBXGroup;
 			children = (
+				1B42BD2327A4E016005F774F /* background.jpg */,
 				A6E3B82E25B32B0700C65157 /* InitialViewController.swift */,
 				A6E3B84025B334AF00C65157 /* InitialExtensions.swift */,
 				A6E3B86725B374A200C65157 /* MenuActions.swift */,
@@ -349,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B42BD2427A4E016005F774F /* background.jpg in Resources */,
 				A6E3B7F825B3260300C65157 /* LaunchScreen.storyboard in Resources */,
 				A6BB134125B49FDF008C5D8A /* Localizable.strings in Resources */,
 				A6E3B7F525B3260300C65157 /* Assets.xcassets in Resources */,
