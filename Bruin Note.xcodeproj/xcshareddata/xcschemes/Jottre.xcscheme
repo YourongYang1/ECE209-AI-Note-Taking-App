@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6E3B7E725B3260200C65157"
-               BuildableName = "Jottre.app"
-               BlueprintName = "Jottre"
-               ReferencedContainer = "container:Jottre.xcodeproj">
+               BuildableName = "Bruin Note.app"
+               BlueprintName = "Bruin Note"
+               ReferencedContainer = "container:Bruin Note.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6E3B7E725B3260200C65157"
-            BuildableName = "Jottre.app"
-            BlueprintName = "Jottre"
-            ReferencedContainer = "container:Jottre.xcodeproj">
+            BuildableName = "Bruin Note.app"
+            BlueprintName = "Bruin Note"
+            ReferencedContainer = "container:Bruin Note.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6E3B7E725B3260200C65157"
-            BuildableName = "Jottre.app"
-            BlueprintName = "Jottre"
-            ReferencedContainer = "container:Jottre.xcodeproj">
+            BuildableName = "Bruin Note.app"
+            BlueprintName = "Bruin Note"
+            ReferencedContainer = "container:Bruin Note.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

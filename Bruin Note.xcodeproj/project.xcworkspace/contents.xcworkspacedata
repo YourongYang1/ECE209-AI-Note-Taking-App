@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/yourongyang/Documents/GitHub/ECE209-AI-Note-Taking-App/Bruin Note.xcodeproj">
    </FileRef>
 </Workspace>
