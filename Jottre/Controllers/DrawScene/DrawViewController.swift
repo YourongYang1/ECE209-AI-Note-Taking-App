@@ -140,12 +140,24 @@ class DrawViewController: UIViewController {
     func setupViews() {
 
         traitCollectionDidChange(traitCollection)
-        
+            
         view.backgroundColor = (traitCollection.userInterfaceStyle == UIUserInterfaceStyle.dark) ? .black : .white
-        
+            
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.title = node.name
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(exportDrawing))
+            //navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(exportDrawing))
+            
+            
+            //navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "pencil.and.outline"), style: .done, target: self, action:#selector(exportDrawing)
+            
+        var img=UIImage(named: "handwritten.jpg")
+        img=img?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+            
+        let items1=UIBarButtonItem(image: img, style: UIBarButtonItem.Style.plain, target: self, action: #selector(handwriting))
+        let items2=UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(exportDrawing))
+            
+        self.navigationItem.rightBarButtonItems=[items2,items1]
+            //
         
         reloadNavigationItems()
         
@@ -223,7 +235,31 @@ class DrawViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
     }
-    
+
+    //handwriting
+    @objc func handwriting() {
+            
+        toolPicker.setVisible(false, forFirstResponder: canvasView)
+            
+        let alertTitle = NSLocalizedString("Save note as", comment: "")
+        let alertCancelTitle = NSLocalizedString("Cancel", comment: "")
+            
+        let alertController = UIAlertController(title: alertTitle, message: "", preferredStyle: .actionSheet)
+
+        if let popoverController = alertController.popoverPresentationController {
+                popoverController.barButtonItem = navigationItem.rightBarButtonItems?.last
+            }
+            
+            //alertController.addAction(createExportToPDFAction())
+        alertController.addAction(createExportToJPGAction())
+        alertController.addAction(createExportToPNGAction())
+        //alertController.addAction(createShareAction())
+        alertController.addAction(UIAlertAction(title: alertCancelTitle, style: .cancel, handler: { (action) in self.toolPicker.setVisible(true, forFirstResponder: self.canvasView)
+            }))
+            
+        present(alertController, animated: true, completion: nil)
+            
+        }
     
     @objc func writeDrawingHandler() {
         
