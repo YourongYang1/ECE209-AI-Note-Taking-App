@@ -22,8 +22,8 @@ class SettingsViewController: UIViewController {
             collectionView.backgroundColor = .clear
             collectionView.register(SettingsCell.self, forCellWithReuseIdentifier: "settingsCell")
             collectionView.register(AppearanceSettingsCell.self, forCellWithReuseIdentifier: "appearanceSettingsCell")
-            collectionView.register(CloudSettingsCell.self, forCellWithReuseIdentifier: "cloudSettingsCell")
             collectionView.register(IconSettingsCell.self, forCellWithReuseIdentifier: "iconSettingsCell")
+            collectionView.register(CloudSettingsCell.self, forCellWithReuseIdentifier: "cloudSettingsCell")
         return collectionView
     }()
     
@@ -55,7 +55,7 @@ class SettingsViewController: UIViewController {
     
     func setupViews() {
         
-        navigationItem.title = NSLocalizedString("Settings", comment: "")
+        navigationItem.title = NSLocalizedString("BruinNote Settings", comment: "")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.handleDone))
         

@@ -34,6 +34,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow()
         window?.windowScene = windowScene
         window?.rootViewController = initialNavigationController
+        // by tianwen
+        //window?.rootViewController =  UINavigationController(rootViewController: initialNavigationController)
+
         window?.makeKeyAndVisible()
         
         presentDocument(urlContext: connectionOptions.urlContexts)

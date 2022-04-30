@@ -43,8 +43,9 @@ class CloudSettingsCell: SettingsCell {
     // MARK: - Override methods
     
     override func setupViews() {
-        super.setupViews()
         
+        /* commented by yinqiu, for disabling the cloud services
+        super.setupViews()
         addSubview(switchView)
         switchView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         switchView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
@@ -56,8 +57,8 @@ class CloudSettingsCell: SettingsCell {
         if UIDevice.isLimited() || !Downloader.isCloudEnabled {
             switchView.isEnabled = false
         }
-        
         setupDelegates()
+        */
         
     }
  

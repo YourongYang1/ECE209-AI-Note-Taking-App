@@ -24,7 +24,7 @@ extension InitialViewController {
         
         let localizedAlertTitle = NSLocalizedString("Rename note", comment: "")
         
-        let localizedAlertMessage = NSLocalizedString("Enter a name for the selected note", comment: "")
+        let localizedAlertMessage = NSLocalizedString("Enter the name and subject for the selected note", comment: "")
         
         let localizedAlertPrimaryActionTitle = NSLocalizedString("Rename", comment: "")
         
@@ -37,9 +37,15 @@ extension InitialViewController {
             }
             
             let alertController = UIAlertController(title: localizedAlertTitle, message: localizedAlertMessage, preferredStyle: .alert)
+            
+            let name_and_subject = currentName.components(separatedBy: "_")
                         
             alertController.addTextField { (textField) in
-                textField.placeholder = currentName
+                textField.placeholder = "Name:" + name_and_subject[0]
+            }
+            // added by yinqiu, 2022/2/20
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Subject:" + name_and_subject[1]
             }
                         
             alertController.addAction(UIAlertAction(title: localizedAlertPrimaryActionTitle, style: UIAlertAction.Style.default, handler: { (action) in
@@ -47,7 +53,10 @@ extension InitialViewController {
                 guard let textFields = alertController.textFields, var updatedName = textFields[0].text else {
                     return
                 }
-                updatedName = updatedName == "" ? currentName : updatedName
+                guard let textFields = alertController.textFields, let updatedSubject = textFields[1].text else {
+                    return
+                }
+                updatedName = updatedName + "_" + updatedSubject
                 
                 self.nodeCollector.nodes[indexPath.row].rename(to: NodeCollector.computeCopyName(baseName: updatedName, path: url.deletingLastPathComponent()))
                 

@@ -88,7 +88,7 @@ extension SettingsViewController: UICollectionViewDelegate, UICollectionViewData
             
         } else if indexPath.row == 2 {
 
-            guard let url = URL(string: "https://github.com/AntonAmes/jottre") else { return }
+            guard let url = URL(string: "https://github.com/YourongYang1/ECE209-AI-Note-Taking-App") else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
 
         }

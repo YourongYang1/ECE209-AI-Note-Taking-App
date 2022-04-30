@@ -27,7 +27,7 @@ class SettingsNavigationViewController: UINavigationController {
                
         modalPresentationStyle = .formSheet
         
-        navigationItem.title = "Settings"
+        navigationItem.title = "BurinNote Settings"
         navigationBar.prefersLargeTitles = true
         
     }
